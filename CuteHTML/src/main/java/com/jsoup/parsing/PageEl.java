@@ -107,14 +107,18 @@ public class PageEl {
 
     /**
      * Function to search through the current webpage's links
+     * @param url - the page through which the searched should go through
      * @param st - the keyword that links in the current webpage should contain
      */
-    public void searchLinkInCurrentPage(String st) {
-        Document doc = go2web(this.webLink, false);
-        Elements document = doc.select("a[href]");
-        for (Element element : document){
-            if (element.text().toLowerCase().contains(st)){
-                System.out.println(element.text() +": " + element.attributes()+"\n");
+    public void searchLinkInCurrentPage(String url, String st) {
+        Document doc = go2web(url, false);
+        Elements links = doc.select("a[href]");
+        for (Element link : links) {
+            // get the value from href attribute
+            String temp = link.attr("href");
+            if(temp.contains("https:") && temp.contains(st)){
+                System.out.println("\nlink : " + temp);
+                System.out.println("text : " + link.text());
             }
         }
     }

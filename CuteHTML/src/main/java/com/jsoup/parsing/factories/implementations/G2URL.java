@@ -44,7 +44,7 @@ public class G2URL extends IComm {
         if (Objects.equals(yesOrNo, "y")){
             System.out.println("Insert keyword, to find links: ");
             String keyword = scanner.nextLine();
-            pageEl.searchLinkInCurrentPage(keyword);
+            pageEl.searchLinkInCurrentPage(url, keyword);
         } else if (Objects.equals(yesOrNo, "n")){
             pageEl.displayLinks(url, false);
         }else {
