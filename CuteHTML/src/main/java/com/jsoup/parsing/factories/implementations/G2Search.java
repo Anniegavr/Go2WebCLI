@@ -1,18 +1,18 @@
 package com.jsoup.parsing.factories.implementations;
 
-import com.jsoup.parsing.PageElement;
-import com.jsoup.parsing.factories.abstractions.ICommand;
+import com.jsoup.parsing.PageEl;
+import com.jsoup.parsing.factories.abstractions.IComm;
 
 import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
-public class G2Search extends ICommand {
-    PageElement pageElement;
+public class G2Search extends IComm {
+    PageEl pageEl;
     Scanner scanner;
 
-    public G2Search(PageElement pageElement, Scanner scanner) {
-        this.pageElement = pageElement;
+    public G2Search(PageEl pageEl, Scanner scanner) {
+        this.pageEl = pageEl;
         this.scanner = scanner;
     }
 
@@ -21,7 +21,7 @@ public class G2Search extends ICommand {
     public void workflow() throws IOException {
         System.out.println("Insert searched term: ");
         String searchedTerm = scanner.nextLine();
-        pageElement.searchEngine(searchedTerm);
+        pageEl.searchEngine(searchedTerm);
         System.out.println("\nThese were top 10 results.");
         System.out.println("Search another term? y\\n");
         String yesOrNo = scanner.nextLine();

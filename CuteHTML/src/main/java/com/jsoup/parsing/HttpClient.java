@@ -1,12 +1,6 @@
 package com.jsoup.parsing;
 
-import com.jsoup.parsing.factories.implementations.CommandFactory;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-
-import java.io.*;
-import java.net.*;
-import java.nio.charset.StandardCharsets;
+import com.jsoup.parsing.factories.implementations.CommFactory;
 
 import static javax.swing.UIManager.getString;
 
@@ -20,7 +14,7 @@ import static javax.swing.UIManager.getString;
 public class HttpClient {
 
     public static void main(String[] args) throws Exception {
-        CommandFactory commandFactory = new CommandFactory();
+        CommFactory commandFactory = new CommFactory();
         commandFactory.initiateDialogue();
     }
 }
